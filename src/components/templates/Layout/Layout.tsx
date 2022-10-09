@@ -1,21 +1,20 @@
-import AppBar from '@material-ui/core/AppBar'
-import Container from '@material-ui/core/Container'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import makeStyles from '@material-ui/core/styles/makeStyles'
-import createStyles from '@material-ui/styles/createStyles'
+import AppBar from '@mui/material/AppBar'
+import Container from '@mui/material/Container'
+import CssBaseline from '@mui/material/CssBaseline'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
+import { makeStyles } from 'tss-react/mui'
 import { type FC, type ReactNode } from 'react'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 import Footer from 'components/molecules/Footer'
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
+const useStyles = makeStyles()((theme) => {
+  return {
     container: {
       marginTop: theme.spacing(4)
     }
-  })
-)
+  };
+});
 
 type Props = {
   children: ReactNode
@@ -23,7 +22,7 @@ type Props = {
 }
 
 const Layout: FC<Props> = ({ children, title }) => {
-  const classes = useStyles()
+  const { classes } = useStyles()
 
   return (
     <>

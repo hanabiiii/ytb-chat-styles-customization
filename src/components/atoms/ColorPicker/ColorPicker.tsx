@@ -1,14 +1,13 @@
-import Popover from '@material-ui/core/Popover'
-import makeStyles from '@material-ui/core/styles/makeStyles'
-import createStyles from '@material-ui/styles/createStyles'
+import Popover from '@mui/material/Popover'
+import { makeStyles } from 'tss-react/mui'
 import classNames from 'classnames'
 import { FormikHandlers } from 'formik'
 import React, { FC, MouseEvent, memo, useCallback, useState } from 'react'
 import { ColorChangeHandler, ColorResult, SketchPicker } from 'react-color'
 import { hex2rgb, rgb2hex } from 'utils/color'
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
+const useStyles = makeStyles()((theme) => {
+  return {
     button: {
       border: 0,
       borderRadius: '50%',
@@ -28,8 +27,8 @@ const useStyles = makeStyles((theme) =>
       display: 'inline-block',
       padding: theme.spacing(1)
     }
-  })
-)
+  };
+});
 
 type Props = {
   disabled?: boolean
@@ -40,7 +39,7 @@ type Props = {
 
 const ColorPicker: FC<Props> = ({ disabled, name, onChange, value }) => {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null)
-  const classes = useStyles()
+  const { classes } = useStyles();
 
   const handleClick = useCallback(
     (event: MouseEvent<HTMLButtonElement>) => {

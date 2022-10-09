@@ -1,8 +1,7 @@
-import Chip from '@material-ui/core/Chip'
-import makeStyles from '@material-ui/core/styles/makeStyles'
-import CodeIcon from '@material-ui/icons/Code'
-import FileCopyIcon from '@material-ui/icons/FileCopy'
-import createStyles from '@material-ui/styles/createStyles'
+import Chip from '@mui/material/Chip'
+import { makeStyles } from 'tss-react/mui'
+import CodeIcon from '@mui/icons-material/Code'
+import FileCopyIcon from '@mui/icons-material/FileCopy'
 import classNames from 'classnames'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import prismTheme from 'prism-react-renderer/themes/nightOwl'
@@ -11,8 +10,8 @@ import Headline from 'components/atoms/Headline'
 import ChatStylesContext from 'context/ChatStylesContext'
 import { generateStyleSheet } from 'utils/styleSheet'
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
+const useStyles = makeStyles()((theme) => {
+  return {
     code: {
       fontSize: '1rem',
       fontFamily: 'Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace',
@@ -28,8 +27,8 @@ const useStyles = makeStyles((theme) =>
     root: {
       marginTop: theme.spacing(5)
     }
-  })
-)
+  };
+});
 
 const Result: FC = () => {
   const codeRef = useRef<HTMLElement>(null)
@@ -38,7 +37,7 @@ const Result: FC = () => {
     () => (chatStyles ? generateStyleSheet(chatStyles) : ''),
     [chatStyles]
   )
-  const classes = useStyles()
+  const { classes } = useStyles()
 
   const handleCopyClick = useCallback(() => {
     if (!codeRef.current) return
@@ -84,7 +83,7 @@ const Result: FC = () => {
           <pre className={classNames(classes.code, className)} style={style}>
             <code ref={codeRef}>
               {tokens.map((line, i) => (
-                <>
+                <div key={i}>
                   <span
                     key={`line-${i}`}
                     {...getLineProps({ line, key: `line-${i}` })}
@@ -97,7 +96,7 @@ const Result: FC = () => {
                     ))}
                   </span>
                   {'\n'}
-                </>
+                </div>
               ))}
             </code>
           </pre>

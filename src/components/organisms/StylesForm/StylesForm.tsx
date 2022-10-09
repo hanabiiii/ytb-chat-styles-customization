@@ -1,14 +1,14 @@
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import FormGroup from '@material-ui/core/FormGroup'
-import Grid from '@material-ui/core/Grid'
-import InputAdornment from '@material-ui/core/InputAdornment'
-import Switch from '@material-ui/core/Switch'
-import TextField from '@material-ui/core/TextField'
-import Typography from '@material-ui/core/Typography'
-import AccountCircleIcon from '@material-ui/icons/AccountCircle'
-import ChatIcon from '@material-ui/icons/Chat'
-import PersonIcon from '@material-ui/icons/Person'
-import SettingsIcon from '@material-ui/icons/Settings'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import FormGroup from '@mui/material/FormGroup'
+import Grid from '@mui/material/Grid'
+import InputAdornment from '@mui/material/InputAdornment'
+import Switch from '@mui/material/Switch'
+import TextField from '@mui/material/TextField'
+import Typography from '@mui/material/Typography'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+import ChatIcon from '@mui/icons-material/Chat'
+import PersonIcon from '@mui/icons-material/Person'
+import SettingsIcon from '@mui/icons-material/Settings'
 import { Field, FieldProps, Formik } from 'formik'
 import React, { FC, useCallback, useContext } from 'react'
 import ChatStylesContext from 'context/ChatStylesContext'
@@ -32,7 +32,7 @@ const StylesForm: FC = () => {
     <Formik initialValues={chatStyles} onSubmit={handleSubmit}>
       <form action="/">
         <section>
-          <Headline icon={<AccountCircleIcon />}>アイコン</Headline>
+          <Headline icon={<AccountCircleIcon />}>Avatars</Headline>
 
           <Grid alignItems="center" container>
             <Grid item sm={4} xs={12}>
@@ -46,7 +46,7 @@ const StylesForm: FC = () => {
                         onChange={field.onChange}
                       />
                     }
-                    label="表示する"
+                    label="Display"
                   />
                 )}
               </Field>
@@ -61,7 +61,7 @@ const StylesForm: FC = () => {
                       )
                     }}
                     disabled={!form.values.avatar.show}
-                    label="大きさ"
+                    label="Size"
                     margin="normal"
                     type="number"
                     variant="outlined"
@@ -74,10 +74,10 @@ const StylesForm: FC = () => {
         </section>
 
         <section>
-          <Headline icon={<PersonIcon />}>名前</Headline>
+          <Headline icon={<PersonIcon />}>Channel names</Headline>
 
           <Typography component="h3" gutterBottom variant="subtitle1">
-            オーナー
+            Owner
           </Typography>
 
           <Grid alignItems="center" container>
@@ -92,7 +92,7 @@ const StylesForm: FC = () => {
                         onChange={field.onChange}
                       />
                     }
-                    label="表示する"
+                    label="Display"
                   />
                 )}
               </Field>
@@ -107,7 +107,7 @@ const StylesForm: FC = () => {
                       )
                     }}
                     disabled={!form.values.ownerName.show}
-                    label="大きさ"
+                    label="Size"
                     margin="normal"
                     type="number"
                     variant="outlined"
@@ -129,7 +129,7 @@ const StylesForm: FC = () => {
             </Grid>
             <Grid item sm={4} xs={12}>
               <Typography component="h4" gutterBottom variant="subtitle2">
-                アウトライン
+                Outline
               </Typography>
             </Grid>
             <Grid item sm={4} xs={12}>
@@ -142,7 +142,7 @@ const StylesForm: FC = () => {
                       )
                     }}
                     disabled={!form.values.ownerName.show}
-                    label="太さ"
+                    label="Thickness"
                     margin="normal"
                     type="number"
                     variant="outlined"
@@ -165,7 +165,7 @@ const StylesForm: FC = () => {
           </Grid>
 
           <Typography component="h3" gutterBottom variant="subtitle1">
-            モデレーター
+            Moderator
           </Typography>
 
           <Grid alignItems="center" container>
@@ -180,7 +180,7 @@ const StylesForm: FC = () => {
                         onChange={field.onChange}
                       />
                     }
-                    label="表示する"
+                    label="Display"
                   />
                 )}
               </Field>
@@ -195,7 +195,7 @@ const StylesForm: FC = () => {
                       )
                     }}
                     disabled={!form.values.moderatorName.show}
-                    label="大きさ"
+                    label="Size"
                     margin="normal"
                     type="number"
                     variant="outlined"
@@ -217,7 +217,7 @@ const StylesForm: FC = () => {
             </Grid>
             <Grid item sm={4} xs={12}>
               <Typography component="h4" gutterBottom variant="subtitle2">
-                アウトライン
+                Outline
               </Typography>
             </Grid>
             <Grid item sm={4} xs={12}>
@@ -230,7 +230,7 @@ const StylesForm: FC = () => {
                       )
                     }}
                     disabled={!form.values.moderatorName.show}
-                    label="太さ"
+                    label="Size"
                     margin="normal"
                     type="number"
                     variant="outlined"
@@ -253,7 +253,7 @@ const StylesForm: FC = () => {
           </Grid>
 
           <Typography component="h3" gutterBottom variant="subtitle1">
-            メンバー
+            Member
           </Typography>
 
           <Grid alignItems="center" container>
@@ -268,7 +268,7 @@ const StylesForm: FC = () => {
                         onChange={field.onChange}
                       />
                     }
-                    label="表示する"
+                    label="Display"
                   />
                 )}
               </Field>
@@ -283,7 +283,7 @@ const StylesForm: FC = () => {
                       )
                     }}
                     disabled={!form.values.memberName.show}
-                    label="大きさ"
+                    label="Size"
                     margin="normal"
                     type="number"
                     variant="outlined"
@@ -305,7 +305,7 @@ const StylesForm: FC = () => {
             </Grid>
             <Grid item sm={4} xs={12}>
               <Typography component="h4" gutterBottom variant="subtitle2">
-                アウトライン
+                Outline
               </Typography>
             </Grid>
             <Grid item sm={4} xs={12}>
@@ -319,7 +319,7 @@ const StylesForm: FC = () => {
                       )
                     }}
                     disabled={!form.values.memberName.show}
-                    label="太さ"
+                    label="Size"
                     margin="normal"
                     type="number"
                     variant="outlined"
@@ -342,7 +342,7 @@ const StylesForm: FC = () => {
           </Grid>
 
           <Typography component="h3" gutterBottom variant="subtitle1">
-            一般ユーザー
+            General user
           </Typography>
 
           <Grid alignItems="center" container>
@@ -357,7 +357,7 @@ const StylesForm: FC = () => {
                         onChange={field.onChange}
                       />
                     }
-                    label="表示する"
+                    label="Display"
                   />
                 )}
               </Field>
@@ -372,7 +372,7 @@ const StylesForm: FC = () => {
                       )
                     }}
                     disabled={!form.values.authorName.show}
-                    label="大きさ"
+                    label="Size"
                     margin="normal"
                     type="number"
                     variant="outlined"
@@ -394,7 +394,7 @@ const StylesForm: FC = () => {
             </Grid>
             <Grid item sm={4} xs={12}>
               <Typography component="h4" gutterBottom variant="subtitle2">
-                アウトライン
+                Outline
               </Typography>
             </Grid>
             <Grid item sm={4} xs={12}>
@@ -407,7 +407,7 @@ const StylesForm: FC = () => {
                       )
                     }}
                     disabled={!form.values.authorName.show}
-                    label="太さ"
+                    label="Size"
                     margin="normal"
                     type="number"
                     variant="outlined"
@@ -431,7 +431,7 @@ const StylesForm: FC = () => {
         </section>
 
         <section>
-          <Headline icon={<ChatIcon />}>メッセージ</Headline>
+          <Headline icon={<ChatIcon />}>Message</Headline>
 
           <Grid alignItems="center" container>
             <Grid item sm={4} xs={12}></Grid>
@@ -444,7 +444,7 @@ const StylesForm: FC = () => {
                         <InputAdornment position="end">px</InputAdornment>
                       )
                     }}
-                    label="大きさ"
+                    label="Size"
                     margin="normal"
                     type="number"
                     variant="outlined"
@@ -462,7 +462,7 @@ const StylesForm: FC = () => {
             </Grid>
             <Grid item sm={4} xs={12}>
               <Typography component="h4" gutterBottom variant="subtitle2">
-                アウトライン
+                Outline
               </Typography>
             </Grid>
             <Grid item sm={4} xs={12}>
@@ -474,7 +474,7 @@ const StylesForm: FC = () => {
                         <InputAdornment position="end">px</InputAdornment>
                       )
                     }}
-                    label="太さ"
+                    label="Size"
                     margin="normal"
                     type="number"
                     variant="outlined"
@@ -497,7 +497,7 @@ const StylesForm: FC = () => {
         </section>
 
         <section>
-          <Headline icon={<SettingsIcon />}>その他</Headline>
+          <Headline icon={<SettingsIcon />}>Others</Headline>
 
           <FormGroup>
             <Field name="engagementMessage.show">
@@ -510,7 +510,7 @@ const StylesForm: FC = () => {
                       onChange={field.onChange}
                     />
                   }
-                  label="入室メッセージを表示する"
+                  label="Show entry message"
                 />
               )}
             </Field>
@@ -524,7 +524,7 @@ const StylesForm: FC = () => {
                       onChange={field.onChange}
                     />
                   }
-                  label="スーパーチャットの背景を表示する"
+                  label="Show Superchat background"
                 />
               )}
             </Field>
@@ -539,7 +539,7 @@ const StylesForm: FC = () => {
                     />
                   }
                   htmlFor={field.name}
-                  label="メンバー登録アナウンスの背景を表示する"
+                  label="Show member registration announcement background"
                 />
               )}
             </Field>

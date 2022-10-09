@@ -1,20 +1,31 @@
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
 import React, { useEffect } from 'react'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import type { FC } from 'react'
-import { Helmet } from 'react-helmet'
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Layout from 'components/templates/Layout'
+import { CacheProvider, EmotionCache } from '@emotion/react';
+import createEmotionCache from 'createEmotionCache'
+
+const clientSideEmotionCache = createEmotionCache();
+
+const theme = createTheme();
 
 const description =
   'Chat StylesはYouTube Liveのチャットの見た目を変更するCSSを生成するためのツールです。OBS StudioのブラウザソースのカスタムCSSとして使われることを前提としています。'
 
-const App: FC<AppProps> = ({ Component, pageProps }) => {
+interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
+}
+
+const App: FC<MyAppProps> = ({ Component, emotionCache = clientSideEmotionCache, pageProps }) => {
   useEffect(() => {
     const jssStyles = document.getElementById('jss-server-side')
 
     jssStyles?.parentNode?.removeChild(jssStyles)
   }, [])
 
-  return (
+  const children = (
     <>
       <Helmet
         defaultTitle="Chat Styles"
@@ -40,6 +51,13 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
       </Layout>
     </>
   )
+  return (
+    <HelmetProvider>
+      <CacheProvider value={emotionCache}>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </CacheProvider>
+    </HelmetProvider>
+  );
 }
 
 export default App

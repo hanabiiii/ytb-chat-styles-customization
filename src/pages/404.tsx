@@ -1,19 +1,18 @@
-import Typography from '@material-ui/core/Typography'
-import makeStyles from '@material-ui/core/styles/makeStyles'
-import createStyles from '@material-ui/styles/createStyles'
+import Typography from '@mui/material/Typography'
+import { makeStyles } from 'tss-react/mui'
 import React, { FC, ReactElement } from 'react'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
+const useStyles = makeStyles()((theme) => {
+  return {
     root: {
       padding: theme.spacing(2, 0)
     }
-  })
-)
+  };
+});
 
 const NoMatch: FC = (): ReactElement => {
-  const classes = useStyles()
+  const { classes } = useStyles()
 
   return (
     <div className={classes.root}>

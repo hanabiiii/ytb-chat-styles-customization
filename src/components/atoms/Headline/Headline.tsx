@@ -1,10 +1,9 @@
-import Typography from '@material-ui/core/Typography'
-import makeStyles from '@material-ui/core/styles/makeStyles'
-import createStyles from '@material-ui/styles/createStyles'
+import Typography from '@mui/material/Typography'
+import { makeStyles } from 'tss-react/mui'
 import { type FC, type ReactElement, type ReactNode } from 'react'
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
+const useStyles = makeStyles()((theme) => {
+  return {
     actions: {
       paddingLeft: theme.spacing(2)
     },
@@ -31,8 +30,8 @@ const useStyles = makeStyles((theme) =>
       alignItems: 'center',
       marginRight: theme.spacing(0.5)
     }
-  })
-)
+  };
+});
 
 interface Props {
   actions?: ReactNode
@@ -41,7 +40,7 @@ interface Props {
 }
 
 const Headline: FC<Props> = ({ actions, children, icon }) => {
-  const classes = useStyles()
+  const { classes } = useStyles()
 
   return (
     <header className={classes.root}>

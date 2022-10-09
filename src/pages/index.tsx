@@ -1,4 +1,4 @@
-import Grid from '@material-ui/core/Grid'
+import Grid from '@mui/material/Grid'
 import React, { FC } from 'react'
 import Preview from 'components/organisms/Preview'
 import Result from 'components/organisms/Result'

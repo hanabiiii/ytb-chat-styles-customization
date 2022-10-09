@@ -1,9 +1,8 @@
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import Paper from '@material-ui/core/Paper'
-import Switch from '@material-ui/core/Switch'
-import VisibilityIcon from '@material-ui/icons/Visibility'
-import makeStyles from '@material-ui/core/styles/makeStyles'
-import createStyles from '@material-ui/styles/createStyles'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Paper from '@mui/material/Paper'
+import Switch from '@mui/material/Switch'
+import VisibilityIcon from '@mui/icons-material/Visibility'
+import { makeStyles } from 'tss-react/mui'
 import classNames from 'classnames'
 import React, { FC, useCallback, useContext } from 'react'
 import PreviewFrame from 'components/atoms/PreviewFrame'
@@ -11,8 +10,8 @@ import Headline from 'components/atoms/Headline'
 import ChatStylesContext from 'context/ChatStylesContext'
 import PreviewContext from 'context/PreviewContext'
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
+const useStyles = makeStyles()((theme) => {
+  return {
     preview: {
       backgroundImage: [
         'linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%)',
@@ -40,13 +39,13 @@ const useStyles = makeStyles((theme) =>
       position: 'sticky',
       top: 0
     }
-  })
-)
+  };
+});
 
 export const Preview: FC = () => {
   const { chatStyles } = useContext(ChatStylesContext)
   const { invert, toggleInvert } = useContext(PreviewContext)
-  const classes = useStyles()
+  const { classes } = useStyles()
 
   const handleInvertChange = useCallback(() => {
     if (typeof toggleInvert === 'function') toggleInvert()

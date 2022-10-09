@@ -1,10 +1,9 @@
-import Link from '@material-ui/core/Link'
-import makeStyles from '@material-ui/core/styles/makeStyles'
-import createStyles from '@material-ui/styles/createStyles'
+import Link from '@mui/material/Link'
+import { makeStyles } from 'tss-react/mui'
 import React, { FC, ReactElement } from 'react'
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
+const useStyles = makeStyles()((theme) => {
+  return {
     list: {
       lineHeight: 1.5,
       listStyleType: 'none',
@@ -25,11 +24,11 @@ const useStyles = makeStyles((theme) =>
       marginTop: theme.spacing(6),
       padding: theme.spacing(3, 2, 4)
     }
-  })
-)
+  };
+});
 
 const Footer: FC = (): ReactElement => {
-  const classes = useStyles()
+  const { classes } = useStyles()
 
   return (
     <footer className={classes.root}>
