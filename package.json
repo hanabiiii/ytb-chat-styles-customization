@@ -1,5 +1,5 @@
 {
-  "author": "Yamagishi Kazutoshi <ykzts@desire.sh>",
+  "author": "hanabiiii",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
@@ -35,11 +35,11 @@
   },
   "homepage": "https://chat-styles.app/",
   "license": "MIT",
-  "name": "@ykzts/chat-styles",
+  "name": "@hanabiiii/ytb-chat-styles-customization",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/ykzts/chat-styles.git"
+    "url": "https://github.com/hanabiiii/ytb-chat-styles-customization.git"
   },
   "scripts": {
     "build": "next build",

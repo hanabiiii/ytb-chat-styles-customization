@@ -37,7 +37,7 @@ const Footer: FC = (): ReactElement => {
         <li className={classes.listItem}>
           {'Inspired by '}
           <Link
-            href="https://chatv2.septapus.com/"
+            href="https://github.com/ykzts/chat-styles"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -47,30 +47,11 @@ const Footer: FC = (): ReactElement => {
         <li className={classes.listItem}>
           {'Created by '}
           <Link
-            href="https://ykzts.com/"
+            href="https://github.com/hanabiiii/"
             rel="noopener noreferrer"
             target="_blank"
           >
-            Yamagishi Kazutoshi
-          </Link>
-        </li>
-        <li className={classes.listItem}>
-          {'Designed by '}
-          <Link
-            href="https://7-nana.bio/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            7_nana
-          </Link>
-        </li>
-        <li className={classes.listItem}>
-          <Link
-            href="https://github.com/ykzts/chat-styles"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Source code
+            hanabiiii
           </Link>
         </li>
       </ul>
